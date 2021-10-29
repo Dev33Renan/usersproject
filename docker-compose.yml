@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  userspg:
+    image: postgres:alpine
+    ports:
+      - '5432:5432'
+    container_name: 'userspg'
+    restart: always
+    volumes:
+      - userspg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passworduser
+
+volumes:
+  userspg-data:
